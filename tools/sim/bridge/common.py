@@ -92,6 +92,14 @@ class SimulatorBridge(ABC):
     f"""
 State:
 Ignition: {self.simulator_state.ignition} Engaged: {self.simulator_state.is_engaged}
+Lat Accel: {self.simulated_car.sm['paramEst'].latAccelEst} m/s^2
+Status: {self.simulated_car.sm['paramEst'].status}
+P: {self.simulated_car.sm['paramEst'].covarianceP}
+Kus: {self.simulated_car.sm['paramEst'].usgEst} deg/g
+offset: {self.simulated_car.sm['paramEst'].angleOffsetEst} deg
+lp offset: {self.simulated_car.sm['liveParameters'].angleOffsetDeg} deg
+Steer ratio: {self.simulated_car.sm['carParams'].steerRatio}
+vEgo: {self.simulated_car.sm['carState'].vEgo} m/s
     """)
 
   @abstractmethod

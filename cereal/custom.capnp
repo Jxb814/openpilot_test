@@ -10,7 +10,21 @@ $Cxx.namespace("cereal");
 # DO rename the structs
 # DON'T change the identifier (e.g. @0x81c2f05a394cf4af)
 
-struct CustomReserved0 @0x81c2f05a394cf4af {
+struct ParamEst @0x81c2f05a394cf4af {
+  debug @0 :Bool;
+  massEst @1 :Float32;  # kg
+  usgEst @2 :Float32;   # deg/g
+  angleOffsetEst @3 :Float32;  # deg
+  covarianceP @4 :List(Float32);
+  status @5 :Status;
+
+  latAccelEst @6 :Float32;   # m/s^2
+
+  enum Status {
+    unestimated @0;
+    converged @1;
+    unconverged @2;
+  }
 }
 
 struct CustomReserved1 @0xaedffd8f31e7b55d {
